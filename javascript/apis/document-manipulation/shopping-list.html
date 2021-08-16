@@ -23,15 +23,37 @@
     <div>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
-      <button>Add item</button>
+      <button id="addButton" onclick="buttonListener()">Add item</button>
     </div>
 
-    <ul>
+    <ul id="list">
 
     </ul>
 
     <script>
+      const item = document.getElementById("item");
+      const addButton = document.getElementById("addButton");
+      const list = document.getElementById("list");
 
+      function buttonListener(){
+        let newItem = item.value;
+        item.value = '';
+        const listItem = document.createElement('li');
+        const span = document.createElement('span');
+        const deleteButton = document.createElement('button');
+        listItem.appendChild(span);
+        listItem.appendChild(deleteButton);
+        span.textContent = newItem;
+        deleteButton.innerHTML = "Delete";
+        list.appendChild(listItem);
+
+        deleteButton.onclick = function(){
+          list.removeChild(listItem);
+        }
+
+        item.focus();
+
+      }
     </script>
   </body>
 </html>
