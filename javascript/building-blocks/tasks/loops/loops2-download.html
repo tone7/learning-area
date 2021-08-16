@@ -42,7 +42,11 @@
     ]
 
     // Add your code here
-
+    for(; i < phonebook.length; i++){
+      if(phonebook[i].name == name){
+        para.textContent = phonebook[i].name + ' ; ' + phonebook[i].number;
+      }
+    }
     // Don't edit the code below here!
     let section = document.querySelector('section');
     section.appendChild(para);

@@ -41,7 +41,16 @@
 
 
     // Add your code here
-
+    while(i >= 2){
+      if(isPrime(i)){
+        if(i == 2){
+          para.textContent += i;
+        }else{
+          para.textContent += i + ', '; 
+        }
+      }
+      i--;
+    }
 
     // Don't edit the code below here!
     let section = document.querySelector('section');
